@@ -51,6 +51,7 @@ module Webby
       :host       => 'example.com',
       :remote_dir => '/not/a/valid/dir',
       :rsync_args => %w(-av),
+      :ssh_port   => 22,
 
       # Global options for HAML and SASS
       :haml_options => {},

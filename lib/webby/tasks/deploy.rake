@@ -16,6 +16,11 @@ namespace :deploy do
         "#{SITE.user}@#{SITE.host}", SITE.remote_dir, SITE.output_dir
     ).upload
   end
+  
+  desc 'Deploy to the server using ssh over a custom port (SITE.ssh_port)'
+  task :ssh_custom do
+    sh %{scp -rq -P #{SITE.ssh_port} #{SITE.output_dir}/* #{SITE.user}@#{SITE.host}:#{SITE.remote_dir}}
+  end
 
 end  # deploy
 
